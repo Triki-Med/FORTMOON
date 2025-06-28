@@ -1,0 +1,17 @@
+# System files
+.DS_Store
+Thumbs.db
+
+# Editor settings (VS Code, JetBrains, etc.)
+.vscode/
+.idea/
+
+# Temporary or backup files
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# Archive files
+*.zip
+*.tar.gz
