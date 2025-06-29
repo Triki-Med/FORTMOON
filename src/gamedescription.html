@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORTMOON GAME DESCRIPTION</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+        .container {
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            z-index: 10;
+        }
+        h2 {
+            font-size: 28px;
+            color: #ecf0f1;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #ecf0f1;
+        }
+        ul {
+            text-align: left;
+            margin-left: 20px;
+            font-size: 18px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .button {
+            margin-top: 30px;
+            padding: 10px 20px;
+            color: #000000;
+            font-size: 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: stars 1s infinite ease-in-out;
+        }
+
+        @keyframes stars {
+            0%, 100% {
+                opacity: 0.5;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>But du jeu :</h2>
+        <p>Le but du jeu est de trouver toutes les paires de cartes identiques. À chaque tour, vous devez retourner deux cartes et essayer de les faire correspondre.</p>
+        
+        <h2>Règles du jeu :</h2>
+        <ul>
+            <li><strong>Retourner deux cartes à la fois :</strong> Lors de chaque tour, le joueur retourne deux cartes. Les cartes sont comparées pour vérifier si elles correspondent.</li>
+            <li><strong>Paire ou pas de paire :</strong> Si les deux cartes retournées sont identiques (une paire), elles restent face visible. Si elles ne correspondent pas, elles sont retournées face cachée après un court délai.</li>
+            <li><strong>Mémoire :</strong> Le jeu repose sur la mémoire. Il faut se souvenir de l'emplacement des cartes déjà retournées pour les associer plus facilement.</li>
+            <li>Si le timer atteint 20 secondes, le jeu se termine automatiquement. Vous devrez avoir terminé avant que le temps ne soit écoulé !</li>
+        </ul>
+
+        <button class="button" onclick="window.location.href='index.html'">Retour au Jeu</button>
+    </div>
+
+    <script>
+        function createStars() {
+            const container = document.querySelector("body");
+            for (let i = 0; i < 350; i++) {
+                const star = document.createElement("div");
+                star.className = "star";
+                const size = Math.random() * 2 + 0.5; // Taille aléatoire des étoiles
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                star.style.top = Math.random() * 100 + "%"; // Position verticale aléatoire
+                star.style.left = Math.random() * 100 + "%"; // Position horizontale aléatoire
+                container.appendChild(star);
+            }
+        }
+
+        createStars(); // Appeler la fonction pour générer les étoiles
+    </script>
+</body>
+</html>
